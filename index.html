@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FaceLandmarks</title>
+<title>FaceLandmarks 4:3 Full Height</title>
 <style>
   html, body {
     margin: 0;
@@ -17,20 +17,17 @@
 
   #video-container {
     position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 100%;           /* pełna wysokość ekranu */
+    aspect-ratio: 4 / 3;    /* zachowanie proporcji 4:3 */
+    background: black;
   }
 
   #input_video {
     width: 100%;
     height: 100%;
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain; /* proporcjonalne dopasowanie */
-    opacity: 0; /* video na 10% */
+    object-fit: contain;     /* proporcjonalne dopasowanie */
+    transform: scaleX(-1);  /* odbicie poziome */
+    opacity: 0.1;           /* 10% przezroczystości */
     display: block;
   }
 
@@ -38,6 +35,8 @@
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
     pointer-events: none;
   }
 </style>

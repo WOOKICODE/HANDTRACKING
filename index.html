@@ -1,16 +1,55 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1.0" />
-<title>FaceMesh Vite</title>
-  <script type="module" crossorigin src="/HANDTRACKING/assets/index-iXNv1Am7.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FaceLandmarks</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #video-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #input_video {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* proporcjonalne dopasowanie */
+    opacity: 0; /* video na 10% */
+    display: block;
+  }
+
+  #overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+  }
+</style>
+  <script type="module" crossorigin src="/HANDTRACKING/assets/index-Dpn1TKkd.js"></script>
 </head>
 <body>
-<div id="container" style="position:relative;width:90vw;max-width:480px;aspect-ratio:4/3;background:#000;">
-  <video id="input_video" playsinline muted style="width:100%;height:100%;object-fit:cover;"></video>
-  <canvas id="overlay" style="position:absolute;top:0;left:0;width:100%;height:100%;"></canvas>
+
+<div id="video-container">
+  <video id="input_video" autoplay muted playsinline></video>
+  <canvas id="overlay"></canvas>
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
 

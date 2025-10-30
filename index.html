@@ -1,63 +1,15 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="pl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hand Video Pinch</title>
-  <style>
-    body { 
-      margin:0; 
-      overflow:hidden; 
-      background:#000; 
-      height:100vh; 
-      width:100vw; 
-      position:relative; 
-    }
-
-    #cursor {
-      position:absolute;
-      width:30px;
-      height:30px;
-      border-radius:50%;
-      background:red;
-      transform:translate(-50%, -50%);
-      pointer-events:none;
-      z-index:10;
-    }
-
-    .videoDiv {
-      position:absolute;
-      top:50%;
-      left:50%;
-      transform:translate(-50%, -50%);
-      width:200px;
-      height:150px;
-      overflow:hidden;
-      border-radius:12px;
-      background:#000;
-      display:none;
-      z-index:1;
-    }
-
-    .videoDiv video {
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
-  </style>
-  <script type="module" crossorigin src="/assets/index-DSGixn-i.js"></script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<title>FaceMesh Vite</title>
+  <script type="module" crossorigin src="/assets/index-CgtdoxxO.js"></script>
 </head>
 <body>
-  <button id="startBtn">START</button>
-
-  <div id="videoDiv1" class="videoDiv">
-    <video src="CARD.mp4" muted playsinline></video>
-  </div>
-  <div id="videoDiv2" class="videoDiv">
-    <video src="CARD2.mp4" muted playsinline></video>
-  </div>
-  
-  <div id="cursor"></div>
-
+<div id="container" style="position:relative;width:90vw;max-width:480px;aspect-ratio:4/3;background:#000;">
+  <video id="input_video" playsinline muted style="width:100%;height:100%;object-fit:cover;"></video>
+  <canvas id="overlay" style="position:absolute;top:0;left:0;width:100%;height:100%;"></canvas>
+</div>
 </body>
 </html>

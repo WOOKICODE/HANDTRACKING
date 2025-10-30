@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FaceLandmarks 4:3 Full Height</title>
+<title>Hands Drag Box</title>
 <style>
   html, body {
     margin: 0;
@@ -17,18 +17,17 @@
 
   #video-container {
     position: relative;
-    height: 100%;           /* pełna wysokość ekranu */
-    aspect-ratio: 4 / 3;    /* zachowanie proporcji 4:3 */
+    height: 100%;
+    aspect-ratio: 4 / 3;
     background: black;
   }
 
   #input_video {
     width: 100%;
     height: 100%;
-    object-fit: contain;     /* proporcjonalne dopasowanie */
-    transform: scaleX(-1);  /* odbicie poziome */
-    opacity: 0.1;           /* 10% przezroczystości */
-    display: block;
+    object-fit: contain;
+    opacity: 0;
+    transform: scaleX(-1);
   }
 
   #overlay {
@@ -40,7 +39,7 @@
     pointer-events: none;
   }
 </style>
-  <script type="module" crossorigin src="/HANDTRACKING/assets/index-Dpn1TKkd.js"></script>
+  <script type="module" crossorigin src="/HANDTRACKING/assets/index-CUif0PQF.js"></script>
 </head>
 <body>
 
@@ -49,8 +48,7 @@
   <canvas id="overlay"></canvas>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh/face_mesh.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
-
 </body>
 </html>
